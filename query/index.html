@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Downloader</title>
+</head>
+
+<body id="body">
+    <h1><a href="/" style="color:white;">Downloader</a></h1>
+    <div style="text-align: center;">
+        <div style="display: inline-block; text-align: left;" class="output" id="output"></div> <br>
+        <div style="display: inline-block; text-align: left;" class="output2" id="output2"></div>
+    </div>
+    <div class="input2" id="send">
+        <input type="number" class="text_box" id="start" autofocus placeholder="Start page">
+        <input type="number" class="text_box" id="end" placeholder="End page"><br><br>
+        <button class="button" type="button" id="button" onclick="&start=${document.getElementById('start').value}&end=${document.getElementById('end').value}`" >Download</button>
+    </div>
+    <script>
+        document.getElementById("body").addEventListener("keyup", function(event) {
+            event.preventDefault();
+            if (event.keyCode === 27) {
+                document.getElementById("start").focus();
+                document.getElementById("start").value = '';
+                document.getElementById("end").value = '';
+            }else if (event.keyCode === 13)
+                document.getElementById("button").click();
+        });
+    </script>
+</body>
+
+</html>
